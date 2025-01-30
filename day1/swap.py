@@ -2,10 +2,10 @@ def swap_case(s):
     x = ""
     for char in s:
         var = ord(char)
-        if var > 96 and var < 122:
-            x += chr(var - 32)
-        elif var > 64 and var < 90:
+        if var >= ord('A') and var <= ord("Z"):
             x += chr(var + 32)
+        elif var >= ord('a') and var <= ord('z'):
+            x += chr(var - 32)
         else:
             x += char
 
