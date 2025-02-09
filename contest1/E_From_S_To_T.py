@@ -11,14 +11,13 @@ for i in range(n):
     dic_t = Counter(t)
     dic_p = Counter(p)
 
-    for i in dic_t:
-        if dic_t[i] > dic_s[i] + dic_p[i]:
-            print("No")
-            
+    if any(dic_t[char] > dic_s[char] + dic_p[char] for char in dic_t):
+        print("NO")
+        
+    else:
+        it = iter(t)
+        if any(c not in it for c in s):
+            print("NO")
         else:
-            it = iter(t)
-            if any(c not in it for c in s):
-                print("No")
-            else:
-                print("Yes")
+            print("YES")
     
