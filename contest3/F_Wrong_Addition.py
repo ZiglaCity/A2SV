@@ -7,7 +7,7 @@ print(arr)
 
 # intialize two pointrs
 # check if a[i] > s[j]
-#     add next element to the left (check for out of range index)\
+#     add next element to the left (check for out of range index)
 # perforem subtaction
 # if we have excess numbers in s append them to the result
 # removing leading zeros 

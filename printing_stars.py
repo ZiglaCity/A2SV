@@ -29,10 +29,10 @@ def print_star3(n):
             print(" " * (n// 2 + 1 - stars) + "*" * stars)
 
 
-        
-n = int(input())
-print_star1(n)
-print("")
-print_star2(n)
-print('')
-print_star3(n)
+if __name__ == "__main__":
+    n = int(input())
+    print_star1(n)
+    print("")
+    print_star2(n)
+    print('')
+    print_star3(n)
