@@ -1,0 +1,19 @@
+Sorting Notes
+
+**Selection Sort:**
+- The array is divided into two parts: the sorted part and the unsorted part.
+- We repeatedly find the smallest number in the unsorted part, keeping track of its index.
+- The smallest number is then swapped with the element at the current index.
+- This process continues until the entire array is sorted.
+
+**Insertion Sort:**
+- The array is divided into two parts: the sorted part(left side) and the unsorted part(right side).
+- We iterate through the unsorted part, picking each number and inserting it into its correct position in the sorted part.
+- To insert the current number, we shift all larger elements in the sorted part one position to the right until we find the correct position for the current number.
+- This process ensures that the sorted part remains in order after each insertion.
+- But when comparing the current index number to the last element in the sorted part, and you realize that( if sorting in ascending order...) the current number is greater than the last element in the sorted part, then we don't waste any time trying to search for the postion of that current number since its already greater than all the elements in the sorted part
+
+**Bubble Sort:**
+- We repeatedly traverse the array, comparing adjacent elements.
+- If two elements are not in the correct order, we swap them.
+- This process is repeated until the array is fully sorted, with larger elements "bubbling" to their correct positions.
