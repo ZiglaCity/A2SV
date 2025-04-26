@@ -10,4 +10,4 @@ for _ in range(q):
     x, y = map(int, input().split())
     result = prefix[n - x + y - 1] - (prefix[n - x - 1] if n - x - 1 >= 0 else 0)
     print(result)
- 
+
