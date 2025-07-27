@@ -1,0 +1,12 @@
+    # verify its a tridiagonal
+
+    # let a(lower sub), b(main diagonal), c(upper sub) be the 3 diagonals
+    # make b[1,1] = 1 by dividing row 1 by b[1,1]
+    # from row 2 downwards;
+    # make a[i, i - 1] 0's by Ri - a[i, i-1] * b[i -1, i - 1] .... this is possible because at each step the b[i-1,i -1] is made 1, hence helps eliminate a[i-1, i]
+    # make b[i,i] 1 by Ri / b[i,i] - a[i, i-1] * c[i - 1, i] ( that is the current state of b[i, i] after eliminating the a[i, i - 1]) this makes the b[i, i] = 1, and takes care of the rest
+    
+
+    # perform backward substitution to find the variables xi
+    # focusing on, the start of the main diagonal of each row to the end
+    # replace the found x, and use it in the subsequent calculations
