@@ -1,5 +1,6 @@
+Thomas iteration algorithm
     # verify its a tridiagonal
-
+    
     # let a(lower sub), b(main diagonal), c(upper sub) be the 3 diagonals
     # make b[1,1] = 1 by dividing row 1 by b[1,1]
     # from row 2 downwards;

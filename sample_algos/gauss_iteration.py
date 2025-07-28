@@ -63,20 +63,22 @@ def verify_final_X(X : list, A : list[list], d: list) -> list:
 
     return res
 
-def compare_the_Ds(initial_d : list, final_d : list):
+def compare_the_Ds(initial_d : list, final_d : list) -> bool:
     for i in range(len(initial_d)):
         if int(initial_d[i]) != int(final_d[i]):
             print(f"WRONG {initial_d[i]} != {final_d[i]}")
-            break
-    else:
-        print(f"CORRECT {initial_d[i]} == {final_d[i]}")
-
+            return False
+    print(f"CORRECT {initial_d[i]} == {final_d[i]}")
+    return True
 
             
 def is_matrix_triadiagonal(matrix : list [list]) -> bool:
     return True
 
 def gauss_jacobi_iteration(matrix: list[list]) -> list[list]:
+    pass
+
+def gauss_seidel_iteration(A: list[list], d: list) -> list:
     pass
 
 if __name__ == "__main__":
