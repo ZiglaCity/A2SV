@@ -1,0 +1,10 @@
+class Solution:
+    def relativeSortArray(self, arr1: List[int], arr2: List[int]) -> List[int]:
+        c = Counter(arr1)
+        res = []
+        seen = set()
+        for n in arr2:
+            new = [n] * c[n]
+            res += new
+        
+        return res + sorted([n for n in arr1 if n not in set(arr2)])
