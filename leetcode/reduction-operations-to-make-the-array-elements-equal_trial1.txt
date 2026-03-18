@@ -1,0 +1,17 @@
+class Solution:
+    def reductionOperations(self, nums: List[int]) -> int:
+        nums.sort(reverse=True)
+        i = res = 0
+        # [5, 5, 5, 3, 3, 1, 1]
+        # [5, 3, 1]
+        while i < len(nums):
+            j = i + 1
+            while j < len(nums) and nums[j] == nums[i]:
+                j += 1
+            i = j
+            if i >= len(nums):
+                break
+            res += j
+        return res
+            
+
