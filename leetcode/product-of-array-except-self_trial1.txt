@@ -1,0 +1,14 @@
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        zero_count = nums.count(0)
+        p = 1 if zero_count != len(nums) else 0
+        for n in nums:
+            if n != 0:
+                p *= n
+        res = []
+        for n in nums:
+            if n == 0:
+                res.append(p if zero_count == 1 else 0)
+            else:
+                res.append(p // n if not zero_count else 0)
+        return res
