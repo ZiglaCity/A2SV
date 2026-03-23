@@ -1,0 +1,16 @@
+class Solution:
+    def countGood(self, nums: List[int], k: int) -> int:
+        dic = defaultdict(int)
+        res = cur = l = 0
+
+        for r in range(len(nums)):
+            cur += dic[nums[r]]
+            dic[nums[r]] += 1
+            while cur >= k:
+                res += len(nums) - r
+                dic[nums[l]] -= 1
+                cur -= dic[nums[l]]
+                l += 1
+        
+        return res
+             
