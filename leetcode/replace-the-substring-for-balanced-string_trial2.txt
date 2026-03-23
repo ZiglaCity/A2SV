@@ -1,0 +1,16 @@
+class Solution:
+    def balancedString(self, s: str) -> int:
+        k = len(s) // 4
+        dic = collections.Counter(s)
+        l = 0
+        mn = n = len(s)
+
+        for r in range(len(s)):
+            dic[s[r]] -= 1
+            while l < n and all(k >= dic[c] for c in "QWER"):
+                mn = min(mn,  r - l + 1)
+                dic[s[l]] += 1
+                l += 1
+                    
+        return mn
+        
