@@ -1,0 +1,19 @@
+class Solution:
+    def minOperations(self, nums: List[int]) -> int:
+        n = len(nums)
+
+        nums = sorted(set(nums)) 
+        m = len(nums)
+
+        mx = 0
+        right = 0
+
+        for left in range(m):
+            limit = nums[left] + n - 1
+
+            while right < m and nums[right] <= limit:
+                right += 1
+
+            mx = max(mx, right - left)
+
+        return n - mx
