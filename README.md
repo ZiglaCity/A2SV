@@ -32,6 +32,7 @@ During the camping phase, we covered:
 
 - Sliding window
 - Prefix sum
+- Sorting
 - Linked list
 - Stacks
 - Queues
