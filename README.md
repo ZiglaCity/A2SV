@@ -40,6 +40,8 @@ During the camping phase, we covered:
 
 This phase eventually ended without prior notice.
 
+At the end of G6, I was ranked 2nd with a rating of 1850+.
+
 ## Transition to G7 (Remote)
 
 After that, we were told to apply for the G7 remote phase, and some of us did.
