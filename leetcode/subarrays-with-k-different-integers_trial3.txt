@@ -1,0 +1,23 @@
+class Solution:
+    def subarraysWithKDistinct(self, nums: List[int], k: int) -> int:
+
+        def subarraysWithAtMostK(k: int):
+            dic = defaultdict(int)
+            s = set()
+            res = end = 0
+
+            for start in range(len(nums)):
+                s.add(nums[start])
+                dic[nums[start]] += 1
+ 
+                while len(s) > k:
+                    dic[nums[end]] -= 1
+                    if dic[nums[end]] == 0:
+                        s.remove(nums[end])
+                    end += 1
+                
+                res += start + 1 - end
+
+            return res
+        
+        return subarraysWithAtMostK(k) - subarraysWithAtMostK(k - 1)

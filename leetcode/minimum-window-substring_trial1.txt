@@ -1,0 +1,18 @@
+class Solution:
+    def minWindow(self, s: str, t: str) -> str:
+        res = ""
+        mn = float('inf')
+        counter_t = Counter(t)
+        counter_s = Counter({})
+
+        left = 0
+        for r in range(len(s)):
+            counter_s[s[r]] += 1
+            while counter_t <= counter_s:
+                if r - left + 1 < mn:
+                    mn = r - left + 1
+                    res = s[left: r + 1]
+                counter_s[s[left]] -= 1
+                left += 1
+        return res
+

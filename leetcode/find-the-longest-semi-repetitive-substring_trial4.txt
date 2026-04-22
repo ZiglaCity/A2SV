@@ -1,0 +1,25 @@
+class Solution:
+    def longestSemiRepetitiveSubstring(self, s: str) -> int:
+        res = cur = 0
+        left = right = 0
+        seen = False
+        last_seen = 0
+
+        for right in range(len(s)):
+            cur += 1
+            if seen and cur == 2:
+                res = max(res, right - left)
+                left = last_seen
+            elif cur > 2:
+                res = max(res, right - left)
+                left = right - 1
+                cur = 2
+            if cur >= 2:
+                seen = True
+                last_seen = right
+            if right < len(s) - 1 and s[right] != s[right + 1]:
+                cur = 0
+            res = max(res, right - left)
+
+        print(last_seen, left)
+        return max(res, right - left + 1)

@@ -1,0 +1,21 @@
+class Solution:
+    def getAverages(self, nums: List[int], k: int) -> List[int]:
+        
+        res = [-1] * len(nums)
+        w = 2 * k + 1
+
+        cur = -1 if len(nums) < (w) else sum(nums[: w])
+
+        if cur == -1:
+            return res
+        
+        res[k] = int(cur / w)
+        
+        for i in range(k + 1, len(nums) - k):
+            cur += nums[i + k]
+            cur -= nums[i - k - 1]
+            res[i] = int(cur / w)
+
+        return res
+
+

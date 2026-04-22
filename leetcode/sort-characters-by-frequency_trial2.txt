@@ -1,0 +1,8 @@
+class Solution:
+    def frequencySort(self, s: str) -> str:
+        dic = Counter(s).most_common()
+        res = []
+        for v, c in dic:
+            res += [v for i in range(c)]
+        return "".join(res)
+        # return "".join(sorted(s, key = lambda x: dic[x], reverse=True))

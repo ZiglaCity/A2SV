@@ -1,0 +1,36 @@
+class Solution:
+    def countVowelSubstrings(self, word: str) -> int:
+        # v_counter = Counter(('a', 'e', 'i', 'o', 'u'))
+        # c_counter = Counter({})
+        # res = l = 0
+        # for r in range(len(word)):
+
+        #     if word[r] not in v_counter:
+        #         while v_counter <= c_counter:
+        #             c_counter[word[l]] -= 1
+        #             res += r - l - 5
+        #             l += 1
+        #         c_counter = Counter({})
+
+        #     else:
+        #         c_counter[word[r]] += 1
+        #         if v_counter <= c_counter:
+        #             res += 1
+        
+        # return res
+
+        vowels = set(('a', 'e', 'i', 'o', 'u'))
+        res = 0
+        for l in range(len(word)):
+            cur = set()
+            if len(word) - l < 5:
+                break
+
+            for r in range(l, len(word)):
+                cur.add(word[r])
+                if word[r] not in vowels:
+                    break
+                if r - l >= 4 and vowels <= cur:
+                    res += 1
+
+        return res
