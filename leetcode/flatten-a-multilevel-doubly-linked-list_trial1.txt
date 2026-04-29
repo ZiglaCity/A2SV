@@ -1,0 +1,35 @@
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val, prev, next, child):
+        self.val = val
+        self.prev = prev
+        self.next = next
+        self.child = child
+"""
+
+class Solution:
+    def flatten(self, head: 'Optional[Node]') -> 'Optional[Node]':
+        def recurse(node):
+            cur = node
+            new = [] 
+            while cur:
+                new.append(cur.val)
+                if cur.child:
+                    children = recurse(cur.child)
+                    new += children
+                cur = cur.next
+
+            return new
+
+        res = recurse(head)
+        head = prev = None
+        for n in res:
+            cur = Node(n, prev)
+            if not head:
+                head = cur
+            if prev:
+                prev.next = cur
+            prev = cur
+
+        return head
