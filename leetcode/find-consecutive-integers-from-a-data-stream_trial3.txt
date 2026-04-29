@@ -1,0 +1,23 @@
+class DataStream:
+
+    def __init__(self, value: int, k: int):
+        self.value = value
+        self.k = k
+        self.queue = []
+        self.left = 0
+        self.right = 0
+
+    def consec(self, num: int) -> bool:
+        self.queue.append(num)
+        self.right += 1
+        if num != self.value:
+            self.left = 0
+            self.right = 0
+            self.queue = []
+        
+        return False if self.right - self.left < self.k  else True
+
+
+# Your DataStream object will be instantiated and called as such:
+# obj = DataStream(value, k)
+# param_1 = obj.consec(num)
