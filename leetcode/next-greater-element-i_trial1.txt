@@ -1,0 +1,14 @@
+class Solution:
+    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        res = []
+        for n in nums1:
+            seen = False
+            for n2 in nums2:
+                if n == n2:
+                    seen = True
+                if seen and n2 > n:
+                    res.append(n2)
+                    break
+            else:
+                res.append(-1)
+        return res
